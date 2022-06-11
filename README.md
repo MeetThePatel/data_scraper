@@ -1,4 +1,4 @@
-* Data Scraper
+# Data Scraper
 
 This is a (personal) small binary to scrape k-line data from Binance and insert it into a PostgreSQL database (more specifically, a TimeScaleDB database). Support for other exchanges is planned, and will most likely be implemented around the end of June 2022.
 
