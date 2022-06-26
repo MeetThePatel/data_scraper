@@ -17,3 +17,19 @@ The list of tickers should be in the form: "BASE_CURR QUOTE_CURR". Here is a fol
 ```shell
 cargo run -r --bin ftx-orderbook "BTC USD" "BTC USDT" "USDT USD"
 ```
+
+### Schema
+
+The SQL command to create the TimeScaleDB table compatible with the script is:
+
+```sql
+CREATE TABLE ftx_orderbook_15s_snapshots (
+	time TIMESTAMPTZ NOT NULL,
+	pair TEXT NOT NULL,
+	price DOUBLE PRECISION NOT NULL,
+	size DOUBLE PRECISION NOT NULL,
+	is_bid BOOL NOT NULL
+);
+
+CREATE INDEX idx_pair_time ON ftx_orderbook_15s_snapshots (pair ASC, time DESC);
+```
