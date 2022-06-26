@@ -161,6 +161,7 @@ dependencies = [
  "libc",
  "num-integer",
  "num-traits",
+ "serde",
  "time",
  "winapi",
 ]
@@ -245,7 +246,9 @@ dependencies = [
  "futures",
  "futures-util",
  "reqwest",
+ "restson",
  "serde",
+ "serde_json",
  "tokio",
  "tokio-postgres",
  "url",
@@ -1006,6 +1009,23 @@ dependencies = [
  "wasm-bindgen-futures",
  "web-sys",
  "winreg",
+]
+
+[[package]]
+name = "restson"
+version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "400beee21c46ca8235ca1d71f57f88a77f2275e8bb05287efca555b2c2794eb4"
+dependencies = [
+ "base64",
+ "futures",
+ "hyper",
+ "hyper-tls",
+ "log",
+ "serde",
+ "serde_json",
+ "tokio",
+ "url",
 ]
 
 [[package]]

@@ -10,14 +10,26 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]]
+name = "ftx"
+test = false
+bench = false
+
+[[bin]]
+name = "ftx-orderbook"
+test = false
+bench = false
+
 [dependencies]
 async_zip = "0.0.7"
-chrono = "0.4.19"
+chrono = { version = "0.4.19", features = ["serde"] }
 csv-async = { version = "1.2.4", features = ["with_serde", "tokio"] }
 futures = "0.3"
 futures-util = "0.3.21"
 reqwest = "0.11.10"
+restson = "1.2.0"
 serde = { version = "1", features = ["derive"] }
+serde_json = "1.0.81"
 tokio = { version = "1", features = ["full"] }
 tokio-postgres = { version = "0.7.6", features = ["with-chrono-0_4"] }
 url = "2.2.2"
